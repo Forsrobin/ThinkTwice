@@ -20,23 +20,20 @@ void Game::init(const char *title, int xpos, int ypos, bool fullscreen)
 
   if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
   {
-
     window = SDL_CreateWindow(title, xpos, ypos, 1080, 720, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
-
     if (renderer)
       SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-
     isRunning = true;
   }
 
+  // Init font library
   if (TTF_Init() == -1)
-  {
     std::cout << "Error opening TTF Fonts" << std::endl;
-  }
 
   // Init entities
   map->LoadMap("assets/map/level1.txt");
+
 }
 
 void Game::handleEvents()
