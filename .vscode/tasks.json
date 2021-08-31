@@ -1,34 +1,42 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "shell",
-			"label": "SDL2",
-			"command": "g++",
-			"args": [
-				"-g",
-				"src/*.cpp",
-				"-o",
-				"build/game.exe",
-				"-Isrc/include",
-				"-Lsrc/lib",
-				"-lmingw32",
-				"-lSDL2main",
-				"-lSDL2",
-				"-lSDL2_image",
-				"-lSDL2_ttf",
-				"-mwindows"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "SDL2",
+      "command": "g++",
+      "args": [
+        "-g",
+        "src/*.cpp",
+        "-o",
+        "build/game.exe",
+        "-Isrc/include",
+        "-Lsrc/lib",
+        "-lmingw32",
+        "-lSDL2main",
+        "-lSDL2",
+        "-lSDL2_image",
+        "-lSDL2_ttf",
+        "-mwindows"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
 }
