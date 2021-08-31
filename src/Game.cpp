@@ -32,7 +32,7 @@ void Game::init(const char *title, int xpos, int ypos, bool fullscreen)
     std::cout << "Error opening TTF Fonts" << std::endl;
 
   // Init entities
-  map->LoadMap("assets/map/level1.txt");
+  map->LoadMap("assets/map/level1.txt", 25, 25, 32, 1);
 
 }
 
@@ -59,6 +59,7 @@ void Game::render()
   SDL_RenderClear(renderer);
 
   // Draw our stuff
+  map->draw();
 
   SDL_RenderPresent(renderer);
 }

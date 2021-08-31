@@ -19,7 +19,7 @@ public:
     SDL_FreeSurface(tempSurface);
     return tex;
   }
-
+  
 };
 
 #endif /* FE22E229_525A_4BAB_B13B_6934DE682A8A */

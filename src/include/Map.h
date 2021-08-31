@@ -10,12 +10,12 @@ public:
   Map() {}
   ~Map() {}
 
-  void AddTile(std::string textureID);
-  void LoadMap(const char *mapFile);
+  void LoadMap(const char *path, int sizeY, int sizeX, int tileSize, int scaledSize);
 
-  // Read level1.txt
-  // Load all textures into a vector
-  // Display those textures in the render function
+  void draw() override
+  {
+    TextureManager::Draw(texture, srcRect, destRect, SDL_FLIP_NONE);
+  }
 
 private:
 };
