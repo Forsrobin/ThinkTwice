@@ -46,6 +46,12 @@ void Game::handleEvents()
   case SDL_QUIT:
     isRunning = false;
     break;
+  case SDL_MOUSEBUTTONDOWN:
+    //Add tile to map
+    int x, y;
+    SDL_GetMouseState(&x, &y);
+    map->AddTile(x, y);
+    break;
   default:
     break;
   }
