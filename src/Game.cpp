@@ -1,13 +1,13 @@
 #include "Game.h"
 #include "Vector2D.h"
 #include "Map.h"
-#include "Hotbar.h"
+#include "Player.h"
 
 SDL_Renderer *Game::renderer = nullptr;
 SDL_Event Game::event;
 
 Map *map;
-Hotbar *hotbar;
+Player *player;
 
 bool Game::isRunning = false;
 
@@ -33,15 +33,18 @@ void Game::init(const char *title, int xpos, int ypos, bool fullscreen)
   if (TTF_Init() == -1)
     std::cout << "Error opening TTF Fonts" << std::endl;
 
-  hotbar = new Hotbar();
-  hotbar->LoadTexture("assets/img/hotbar.png");
+  //Load player
+  player = new Player("assets/img/tileset.png", 2, 2);
 
+  // Load map
   map = new Map("terrain", 32);
   map->LoadMap("assets/maps/level1.txt", 25, 25);
 }
 
 void Game::handleEvents()
 {
+
+
   SDL_PollEvent(&event);
   switch (event.type)
   {
@@ -69,7 +72,7 @@ void Game::render()
 
   // Draw our stuff
   map->draw();
-  hotbar->draw();
+  player->draw();
 
   SDL_RenderPresent(renderer);
 }

@@ -39,7 +39,6 @@ public:
       TextureManager::Draw(tex, tile.srcRect, tile.destRect, SDL_FLIP_NONE);
   }
 
-private:
 };
 
 #endif /* C9F3179B_0BC6_40A1_B34F_BEC4522CD642 */
